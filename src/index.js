@@ -6,26 +6,28 @@ import './index.css';
 
 class Square extends React.Component {
 
+    click (promsFrase) {           //semplicissima funzione
 
-        render() {
-            return ( 
-            <button className = "square" onClick = {() => console.log("click")}> 
-                { this.props.value } 
-            </button>
-            );
-        }
+        console.log(promsFrase);
     }
-    /*
 
-                 > () =>{ this.props.value } <
-                /button>
-    */
+
+    render() {
+       
+        return ( 
+            <button className = "square" onClick = {() => this.click("HAI CLICCATO")}> 
+                {this.props.value} 
+            </button>
+        );
+    }
+}
+
 
 class Board extends React.Component {
-    renderSquare(i) {
-        return <Square value = { i }
-        /> ;
-    }
+    renderSquare(i) {           // nome del metodo con il parametro richiesto "i"
+        return <Square value = { i }/> ;        //con sqare da che si sta riferendo alla classe square
+    }       /*return ritorna e setta, collegandosi alla classe square, tutte le variabili 
+            chiamate value con il valore i che verrà settato in base al parametro passato */
 
     render() {
         const status = 'Next player: X';
