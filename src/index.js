@@ -2,17 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
-
-
-function Square(props) {
+function Square(props) {        // function per pggetti visivi...class per renderli dinamici
     return (
       <button className="square" onClick={props.onClick}>
-        {props.value}
-      </button>
+        {props.value}     
+      </button>     //sio usa this.props.nomeVariabile perchè con props si intende il valore della variabile passata per riferimento
     );
-  }
-  
+}
+
+/*
+
+<card>  
+    immagine = {california}             --> non Stringhe
+    nome = {calfornia} o "california"   --> solo Stringhe
+    prezzo = {1.99}                 
+*/                              //questo è il modo in cui si passano le variabili alla classe che le richeide
+                                //così facendo tutte le variabili con quel nome prenderanno il valore specificato
+
+//.map fa da ciclo...obbligatoria al suo inerno una key = {} (consigliato "id" al suo interno)
+
   class Board extends React.Component {
     renderSquare(i) {
       return (
